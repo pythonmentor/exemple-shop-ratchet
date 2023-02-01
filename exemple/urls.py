@@ -1,5 +1,10 @@
 from django.urls import path
 
-app_name = "shop"
+from .views import home, detail
 
-urlpatterns = []
+app_name = "exemple"
+
+urlpatterns = [
+    path('', home, name="home"),
+    path('<slug:slug>/', detail, name="detail"),
+]

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Voici tous mes produits</h1>
+    {% for product in products %}
+        {% if loop.first %}<ul>{% endif %}
+            <li><a href="{% url 'exemple:detail' product.slug %}">{{ product.name }}</a></li>
+        {% if loop.last %}</ul>{% endif %}
+    {% endfor %}
+</div>
+{% endblock content %}
