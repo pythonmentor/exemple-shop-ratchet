@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Product
 
@@ -15,13 +15,13 @@ def home(request):
     )
 
 
-def detail(request):
+def detail(request, slug):
     """View displaying the product details."""
-    products = Product.objects.all()
+    product = get_object_or_404(Product, kwargs={"slug": slug})
     return render(
         request,
         "exemple/home.html",
         {
-            "products": products,
+            "products": product,
         },
     )

@@ -2,11 +2,13 @@
 
 {% block content %}
 <div class="container">
-    <h1>Voici tous mes produits</h1>
+    <h1>Bienvenue sur notre catalogue</h1>
     {% for product in products %}
         {% if loop.first %}<ul>{% endif %}
             <li><a href="{% url 'exemple:detail' product.slug %}">{{ product.name }}</a></li>
         {% if loop.last %}</ul>{% endif %}
+    {% empty %}
+        <p>Il n'y a encore aucun produit dans notre catalogue. Revenez-nous voir lorsque nous aurons ouvert.</p>
     {% endfor %}
 </div>
 {% endblock content %}
