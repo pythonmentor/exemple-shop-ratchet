@@ -135,6 +135,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Configuration of the custom user
 AUTH_USER_MODEL = "users.User"
+LOGIN_REDIRECT_URL = "exemple:home"
+LOGOUT_REDIRECT_URL = "exemple:home"
 
 # Configuration of Django Crispy Forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
